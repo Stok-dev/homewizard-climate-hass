@@ -247,6 +247,7 @@ class HomeWizardClimateEntity(ClimateEntity):
         if self._isFAN or self._isDEHUMID:
             if self._device_web_socket.last_state.power_on:
                 return HVACMode.FAN_ONLY
+            return HVACMode.OFF
         """Return hvac target hvac state."""
         if self._device_web_socket.last_state.power_on:
             result = (
